@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25123.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <LinkIncremental>
+    </LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\thirdparty\pe_bliss\pe_bliss;$(SolutionDir)\include;.\.\src\ui\Qt;.;$(QTDIR)\include;.\.\src\ui\Qt\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\thirdparty\pe_bliss\pe_bliss;$(SolutionDir)\include;.\.\src\ui\Qt;.;$(QTDIR)\include;.\.\src\ui\Qt;.;$(QTDIR)\include;.\.\src\ui\Qt\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\platform\win32\builder.cpp" />
+    <ClCompile Include="src\platform\win32\embedded_stub.cpp" />
+    <ClCompile Include="src\schemes\protection.cpp" />
+    <ClCompile Include="src\ui\Qt\main.cpp" />
+    <ClCompile Include="src\ui\Qt\shambles.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\entropy.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\file_version_info.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\message_table.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_base.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_bound_import.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_checksum.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_debug.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_directory.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_dotnet.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_exception.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_exception_directory.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_exports.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_factory.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_imports.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_load_config.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_properties.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_properties_generic.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_rebuilder.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_relocations.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_resources.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_resource_manager.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_resource_viewer.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_rich_data.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_section.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\pe_tls.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_bitmap_reader.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_bitmap_writer.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_cursor_icon_reader.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_cursor_icon_writer.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_data_info.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_message_list_reader.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_string_table_reader.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_version_info_reader.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\resource_version_info_writer.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\utils.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\version_info_editor.cpp" />
+    <ClCompile Include="thirdparty\pe_bliss\pe_bliss\version_info_viewer.cpp" />
+    <ClCompile Include=".\src\ui\Qt\Debug\moc_shambles.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include=".\src\ui\Qt\qrc_shambles.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include=".\src\ui\Qt\Release\moc_shambles.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\ui\Qt\shambles.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\.\src\ui\Qt\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\.\src\ui\Qt\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\.\src\ui\Qt\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\.\src\ui\Qt\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\builder.hpp" />
+    <CustomBuild Include="include\shambles.hpp">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing shambles.hpp...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\.\src\ui\Qt\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\.\src\ui\Qt\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB  "-I$(SolutionDir)\thirdparty\pe_bliss\pe_bliss" "-I$(SolutionDir)\include" "-I.\.\src\ui\Qt" "-I." "-I$(QTDIR)\include" "-I.\.\src\ui\Qt\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing shambles.hpp...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\.\src\ui\Qt\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\.\src\ui\Qt\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB  "-I$(SolutionDir)\thirdparty\pe_bliss\pe_bliss" "-I$(SolutionDir)\include" "-I.\.\src\ui\Qt" "-I." "-I$(QTDIR)\include" "-I.\.\src\ui\Qt\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets"</Command>
+    </CustomBuild>
+    <ClInclude Include="include\embedded_stub.hpp" />
+    <ClInclude Include="include\schemes.hpp" />
+    <ClInclude Include="include\tealib.hpp" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\entropy.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\file_version_info.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\message_table.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_base.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_bliss.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_bliss_resources.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_bound_import.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_checksum.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_debug.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_directory.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_dotnet.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_exception.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_exception_directory.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_exports.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_factory.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_imports.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_load_config.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_properties.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_properties_generic.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_rebuilder.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_relocations.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_resources.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_resource_manager.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_resource_viewer.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_rich_data.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_section.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_structures.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\pe_tls.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_bitmap_reader.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_bitmap_writer.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_cursor_icon_reader.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_cursor_icon_writer.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_data_info.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_internal.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_message_list_reader.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_string_table_reader.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_version_info_reader.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\resource_version_info_writer.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\stdint_defs.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\utils.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\version_info_editor.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\version_info_types.h" />
+    <ClInclude Include="thirdparty\pe_bliss\pe_bliss\version_info_viewer.h" />
+    <ClInclude Include=".\src\ui\Qt\ui_shambles.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\ui\Qt\shambles.qrc">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\.\src\ui\Qt\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\.\src\ui\Qt\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\.\src\ui\Qt\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\.\src\ui\Qt\qrc_%(Filename).cpp</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\.\src\ui\Qt\$(ConfigurationName)" UicDir=".\.\src\ui\Qt" RccDir=".\.\src\ui\Qt" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_Win32="msvc2015" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
